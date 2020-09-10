@@ -3,4 +3,4 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class BombBounceEvent: UnityEvent<Vector3>{}
+public class BombBounceEvent : UnityEvent<Vector3> { }

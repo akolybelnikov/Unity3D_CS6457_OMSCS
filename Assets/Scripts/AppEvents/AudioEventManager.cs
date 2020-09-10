@@ -22,7 +22,7 @@ public class AudioEventManager : MonoBehaviour
     public AudioClip[] minionFootstepAudio;
     public AudioClip punchAudio;
 
-    private UnityAction<Vector3,float> boxCollisionEventListener;
+    private UnityAction<Vector3, float> boxCollisionEventListener;
 
     private UnityAction<Vector3, float> playerLandsEventListener;
 
@@ -38,7 +38,7 @@ public class AudioEventManager : MonoBehaviour
 
     private UnityAction<GameObject> deathEventListener;
 
-    private UnityAction<Vector3,MinionScript> minionDeathEventListener;
+    private UnityAction<Vector3, MinionScript> minionDeathEventListener;
 
     private UnityAction<MinionScript> minionSpawnEventListener;
 
@@ -49,7 +49,7 @@ public class AudioEventManager : MonoBehaviour
     void Awake()
     {
 
-        boxCollisionEventListener = new UnityAction<Vector3,float>(boxCollisionEventHandler);
+        boxCollisionEventListener = new UnityAction<Vector3, float>(boxCollisionEventHandler);
 
         playerLandsEventListener = new UnityAction<Vector3, float>(playerLandsEventHandler);
 
@@ -65,7 +65,7 @@ public class AudioEventManager : MonoBehaviour
 
         deathEventListener = new UnityAction<GameObject>(deathEventHandler);
 
-        minionDeathEventListener = new UnityAction<Vector3,MinionScript>(minionDeathEventHandler);
+        minionDeathEventListener = new UnityAction<Vector3, MinionScript>(minionDeathEventHandler);
 
         minionSpawnEventListener = new UnityAction<MinionScript>(minionSpawnEventHandler);
 
@@ -80,14 +80,14 @@ public class AudioEventManager : MonoBehaviour
     {
 
 
-        			
+
     }
 
 
     void OnEnable()
     {
 
-        EventManager.StartListening<BoxCollisionEvent, Vector3,float>(boxCollisionEventListener);
+        EventManager.StartListening<BoxCollisionEvent, Vector3, float>(boxCollisionEventListener);
         EventManager.StartListening<PlayerLandsEvent, Vector3, float>(playerLandsEventListener);
         EventManager.StartListening<MinionLandsEvent, Vector3, float>(minionLandsEventListener);
         EventManager.StartListening<MinionJabberEvent, Vector3>(minionJabberEventListener);
@@ -105,7 +105,7 @@ public class AudioEventManager : MonoBehaviour
     void OnDisable()
     {
 
-        EventManager.StopListening<BoxCollisionEvent, Vector3,float>(boxCollisionEventListener);
+        EventManager.StopListening<BoxCollisionEvent, Vector3, float>(boxCollisionEventListener);
         EventManager.StopListening<PlayerLandsEvent, Vector3, float>(playerLandsEventListener);
         EventManager.StopListening<MinionLandsEvent, Vector3, float>(minionLandsEventListener);
         EventManager.StopListening<MinionJabberEvent, Vector3>(minionJabberEventListener);
@@ -120,8 +120,8 @@ public class AudioEventManager : MonoBehaviour
     }
 
 
-	
- 
+
+
 
     void boxCollisionEventHandler(Vector3 worldPos, float impactForce)
     {
@@ -131,11 +131,11 @@ public class AudioEventManager : MonoBehaviour
 
         EventSound3D snd = Instantiate(eventSound3DPrefab, worldPos, Quaternion.identity, null);
 
-        snd.audioSrc.clip = this.boxAudio[Random.Range(0,boxAudio.Length)];
+        snd.audioSrc.clip = this.boxAudio[Random.Range(0, boxAudio.Length)];
 
-        snd.audioSrc.pitch = Random.Range(1f-halfSpeedRange, 1f+halfSpeedRange);
+        snd.audioSrc.pitch = Random.Range(1f - halfSpeedRange, 1f + halfSpeedRange);
 
-        snd.audioSrc.minDistance = Mathf.Lerp(1f, 8f, impactForce /200f);
+        snd.audioSrc.minDistance = Mathf.Lerp(1f, 8f, impactForce / 200f);
         snd.audioSrc.maxDistance = 100f;
 
         snd.audioSrc.Play();
@@ -239,7 +239,7 @@ public class AudioEventManager : MonoBehaviour
 
         if (eventSound3DPrefab)
         {
-            
+
             EventSound3D snd = Instantiate(eventSound3DPrefab, worldPos, Quaternion.identity, null);
 
             snd.audioSrc.clip = this.explosionAudio;
@@ -307,7 +307,7 @@ public class AudioEventManager : MonoBehaviour
 
     void minionDeathEventHandler(Vector3 pos, MinionScript ms)
     {
-  
+
         if (minionDeathAudio)
         {
 
@@ -341,7 +341,7 @@ public class AudioEventManager : MonoBehaviour
             snd.audioSrc.Play();
         }
 
-  
+
         if (minionOuchAudio)
         {
 
@@ -357,7 +357,8 @@ public class AudioEventManager : MonoBehaviour
     }
 
 
-    void minionSpawnEventHandler(MinionScript minion) {
+    void minionSpawnEventHandler(MinionScript minion)
+    {
 
         if (minionSpawnAudio)
         {
@@ -376,7 +377,8 @@ public class AudioEventManager : MonoBehaviour
     }
 
 
-    void minionFootstepEventHandler(Vector3 pos) {
+    void minionFootstepEventHandler(Vector3 pos)
+    {
 
         if (minionSpawnAudio)
         {
