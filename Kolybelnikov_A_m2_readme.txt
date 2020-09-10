@@ -12,7 +12,7 @@
 
 ### 2 Physics Layers Example
 
-    - 
+    - made three red spheres that are part of the red layer; disabled red layer objects collision with each other
 
 ### 3 Compound Collider for Complex Geometry
 
