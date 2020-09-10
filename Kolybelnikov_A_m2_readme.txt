@@ -31,21 +31,26 @@
 
 ### 6 Customized Center of Mass
 
-    - 
+    - Added a Weeble Wobble object with a capsule rigidbody and a customized center of mass. 
+      Made it a prefab and added a two more instances of it rotated at different angles. 
 
 ### 7 Default Friction
 
     - 
 
-### 8 Bouncy Rigidbody
+### 8 Custom Friction
 
     -
 
-### 9 Ragdoll
+### 9 Bouncy Rigidbody
 
     -
 
-### 10 Scripting Forces
+### 10 Ragdoll
+
+    -
+
+### 11 Scripting Forces
 
     -
 
