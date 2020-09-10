@@ -20,7 +20,7 @@
 
 ### 4 Chain with Joint Constraints
 
-    - 
+    - created a chain of yellow cylinders and attached a velocity script to make the chain swing at the start of the game 
 
 ### 5 Mecanim-Animated Kinematic Elevator
 
