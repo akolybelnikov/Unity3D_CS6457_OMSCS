@@ -36,11 +36,11 @@
 
 ### 7 Default Friction
 
-    - 
+    - Added a purple cude with default friction on top of the ramp. The cube won't slide down when the game starts.
 
 ### 8 Custom Friction
 
-    -
+    - Added a green cube that has a new physics material with mimimal friction. The cube slides down the ramp. 
 
 ### 9 Bouncy Rigidbody
 

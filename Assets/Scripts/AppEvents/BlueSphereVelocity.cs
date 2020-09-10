@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlueSphereVelocity : MonoBehaviour
 {
-    public float max = 5;
+    public float max = 7;
     // Start is called before the first frame update
     void Start()
     {
