@@ -18,6 +18,7 @@
 
     - Imported a Kitsun mask from the assets store and added a few child game objects that contain colliders,
       but are invisible and have no rigidbody. The resulting compound collider approximates the form of the mask.
+    - Added a sound on a collision event of the mask.
 
 ### 4 Chain with Joint Constraints
 
@@ -25,7 +26,8 @@
 
 ### 5 Mecanim-Animated Kinematic Elevator
 
-    - 
+    - Added an Elevator platform to the scene that has an animation attached; added a red ball on top of the platform.
+      The ball bounces every time the Elevator goes up.
 
 ### 6 Customized Center of Mass
 
@@ -51,7 +53,7 @@
 
 ### External resources
 
-The project doesn't include any assets/resources acquired outside class.
+The project includes an imported package acquired int he Unity Assets Store, Kitsun Mask.
 
 ### Building and Running the code
 
