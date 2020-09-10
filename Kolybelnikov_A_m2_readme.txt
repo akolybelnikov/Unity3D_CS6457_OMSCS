@@ -8,19 +8,20 @@
 
 ### 1 Basic Rigidbodies with Collision Events
 
-    - created three blue rigidbody spheres and attached scripts for collision events and velocity control
+    - Created three blue rigidbody spheres and attached scripts for collision events and velocity control.
 
 ### 2 Physics Layers Example
 
-    - made three red spheres that are part of the red layer; disabled red layer objects collision with each other
+    - Made three red spheres that are part of the red layer; disabled red layer objects collision with each other.
 
 ### 3 Compound Collider for Complex Geometry
 
-    - 
+    - Imported a Kitsun mask from the assets store and added a few child game objects that contain colliders,
+      but are invisible and have no rigidbody. The resulting compound collider approximates the form of the mask.
 
 ### 4 Chain with Joint Constraints
 
-    - created a chain of yellow cylinders and attached a velocity script to make the chain swing at the start of the game 
+    - Created a chain of yellow cylinders and attached a velocity script to make the chain swing at the start of the game.
 
 ### 5 Mecanim-Animated Kinematic Elevator
 
