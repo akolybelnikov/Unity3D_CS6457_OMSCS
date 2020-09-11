@@ -44,15 +44,16 @@
 
 ### 9 Bouncy Rigidbody
 
-    -
+    - Created and added am orange sphere with a new bouncy material.
 
 ### 10 Ragdoll
 
-    -
+    -  Created and added a Y-bot ragdoll with the bones assigned. Placed it over the nearest hurdle.
 
 ### 11 Scripting Forces
 
-    -
+    - Created a prefab for Jumping Black Beans with a script that applies random force on X and Y axes,
+      in order for the objects to jump upon touching the ground.
 
 ## Project Instructions
 
