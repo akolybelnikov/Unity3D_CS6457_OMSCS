@@ -33,8 +33,10 @@
 
 ### 5 Extra credit: SomeDude_RootMotion throwing a ball
 
-    - Added an Elevator platform to the scene that has an animation attached; added a red ball on top of the platform.
-      The ball bounces every time the Elevator goes up.
+    - Implemented all the steps in the extra credit tutorial with some modifications:
+        - Player can collect and hold multiple objects at the same time
+        - the throwing animation works while Player has at least one collected object
+        - the animation is activated by the "Fire2" (left alt) button instead of disabling the "Fire1"
 
 ## Project Instructions
 
@@ -62,3 +64,9 @@ Match Target is performed with the left `ctrl` key when the root-motion dude is 
 Toggle UI panel is performed with Escape button.
 
 The Door-prefabs are located one after another on the right side of the scene relative to the start position of the characters.
+
+Behind each animatable Door there's a Collectable sphere.
+
+Player can collect all pink spheres and throw them one by one until he has no more left.
+
+The throwing animation is activated by pressing left alt button ("Fire2").
