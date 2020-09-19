@@ -21,11 +21,17 @@
 
     - Pink collectable Sphere that isTrigger and has a script attached
 
-### 4 Chain with Joint Constraints
+### 4 Trigger Based Mechanim-Animated Object
 
-    - Created a chain of yellow cylinders and attached a velocity script to make the chain swing at the start of the game.
+    - Created a Door prefab with an Animator, Animation and a script attached. The door is inside of an empty root object that can be placed anywhere in the world and the door position and rotation is relative to this root object.
 
-### 5 Mecanim-Animated Kinematic Elevator
+    - I chose to make a door after a feed-back from my team. The door animation can be changed for the door to slide on x or y axis instead of rotating. The door prefab will be used in our team game project.
+
+#### Known bugs
+
+    I had to intrduce some simple state checks because the door behavior was poorly controlled by the trigger-enter and trigger-exit events: sometimes the door would stuck in the open state and repeat the open-close animation next time the Dude character would pass by, but then in a reversed uncontrollable manner. The state checks made the behavior almost 100% predictable.
+
+### 5 Extra credit: SomeDude_RootMotion throwing a ball
 
     - Added an Elevator platform to the scene that has an animation attached; added a red ball on top of the platform.
       The ball bounces every time the Elevator goes up.
@@ -53,4 +59,6 @@ The player movement can be controlled with arrow keys of the keyboard, character
 
 Match Target is performed with the left `ctrl` key when the root-motion dude is in the proximity of the button.
 
-Toggle UI panel is performed with Escape button
+Toggle UI panel is performed with Escape button.
+
+The Door-prefabs are located one after another on the right side of the scene relative to the start position of the characters.
