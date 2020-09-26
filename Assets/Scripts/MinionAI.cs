@@ -63,6 +63,7 @@ public class MinionAI : MonoBehaviour
 
                 if (agent.pathPending == false && agent.remainingDistance - agent.stoppingDistance <= 0)
                 {
+                    currWaypoint++;
                     aIState = AIState.StaticWaypoints;
                 }
                 break;
