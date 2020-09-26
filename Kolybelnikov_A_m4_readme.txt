@@ -6,37 +6,26 @@
 
 ## Completed Requirements
 
-### 1 Working Game Start Menu
+### 1 AI controlled Minion visits 5 stationary waypoints(that are visible)
 
-    - Overlay UI Panel with Start Game and Exit buttons
-    - Camera background with postprocessing effect
+    - There are 5 half-transparent green cubes that are waypoints
+    - AI controlled Minion starts the round by visiting them all before going after the moving target
 
-### 2 Working In-Game Menu
+### 2 AI controlled Minion heads off moving waypoint(that is visible)
 
-    - Overlay UI Panel with Restart Game and Exit buttons
-    - Panel is toggled on and off with Escape button
-    - Game pauses when Menu is enabled
+    - After visiting all the static waypoints AI controlled Minion tries to head off the 6th, moving half-transparent green cube / waypoint
 
-### 3 Collectable Ball that only SomeDude_RootMotion can collect
+### 3 AI is controlled by procedural state machine of at least 2 states
 
-    - Pink collectable Sphere that isTrigger and has a script attached
+    - There are two states, one for the static waypoints and one for the moving one
 
-### 4 Trigger Based Mechanim-Animated Object
+### 4 Minion is animated with steps and not sunk into ground
 
-    - Created a Door prefab with an Animator, Animation and a script attached. The door is inside of an empty root object that can be placed anywhere in the world and the door position and rotation is relative to this root object.
-
-    - I chose to make a door after a feed-back from my team. The door animation can be changed for the door to slide on x or y axis instead of rotating. The door prefab will be used in our team game project.
+    - Implemented with `animator.SetFloat("vely", agent.velocity.magnitude / agent.speed);`
 
 #### Known bugs
 
-    I had to intrduce some simple state checks because the door behavior was poorly controlled by the trigger-enter and trigger-exit events: sometimes the door would stuck in the open state and repeat the open-close animation next time the Dude character would pass by, but then in a reversed uncontrollable manner. The state checks made the behavior almost 100% predictable.
-
-### 5 Extra credit: SomeDude_RootMotion throwing a ball
-
-    - Implemented all the steps in the extra credit tutorial with some modifications:
-        - Player can collect and hold multiple objects at the same time
-        - the throwing animation works while Player has at least one collected object
-        - the animation is activated by the "Fire2" (left alt) button instead of disabling the "Fire1"
+    - there are no known bugs except the AI controlled Minion is not able to correctly predict the position of the moving waypoint from the first time
 
 ## Project Instructions
 
@@ -55,18 +44,4 @@ After the files of the project have been generated from the Project Settings, a 
 ### Grading
 
 To check if the game meets the assignemnt requirements, the project can be run with the executive files,
-or opened in Unity and run in developer mode. The project includes only one scene, **demo**.
-
-The player movement can be controlled with arrow keys of the keyboard, character switch is performed with the `t` key.
-
-Match Target is performed with the left `ctrl` key when the root-motion dude is in the proximity of the button.
-
-Toggle UI panel is performed with Escape button.
-
-The Door-prefabs are located one after another on the right side of the scene relative to the start position of the characters.
-
-Behind each animatable Door there's a Collectable sphere.
-
-Player can collect all pink spheres and throw them one by one until he has no more left.
-
-The throwing animation is activated by pressing left alt button ("Fire2").
+or opened in Unity and run in developer mode. The project includes only one scene, **demo**. The scene is using a fixed camera for the purpose of this assignment.
