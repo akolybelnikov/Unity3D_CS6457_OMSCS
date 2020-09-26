@@ -42,7 +42,7 @@ public class MinionAI : MonoBehaviour
         switch (aIState)
         {
             case AIState.StaticWaypoints:
-                if (agent.pathPending == false && agent.remainingDistance == 0)
+                if (agent.pathPending == false && agent.remainingDistance <= 0.3)
                 {
                     setNextWaypoint();
                     if (currWaypoint == 5)
@@ -55,7 +55,7 @@ public class MinionAI : MonoBehaviour
                 // Current distance to the moving waypoint
                 float dist = Vector3.Distance(moving_waypoint.transform.position, this.transform.position);
                 // Time agent needs to make this distance
-                float lookAheadTime = Mathf.Clamp(dist / agent.speed, 1f, 1.7f);
+                float lookAheadTime = Mathf.Clamp(dist / agent.speed, 1f, 1.5f);
                 // Calculate predicted position of the moving waypoint based on the time
                 Vector3 predictedPosition = moving_waypoint.transform.position + velocity_reporter.velocity * lookAheadTime;
                 // Move agent to the predicted intercept position
@@ -63,6 +63,7 @@ public class MinionAI : MonoBehaviour
 
                 if (agent.pathPending == false && agent.remainingDistance - agent.stoppingDistance <= 0)
                 {
+                    setNextWaypoint();
                     aIState = AIState.StaticWaypoints;
                 }
                 break;
