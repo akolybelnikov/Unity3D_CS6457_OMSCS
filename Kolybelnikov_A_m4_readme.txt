@@ -25,7 +25,8 @@
 
 #### Known bugs
 
-    - there are no known bugs except the AI controlled Minion is not able to correctly predict the position of the moving waypoint from the first time
+    - at times it looks like the AI controlled Minion is missing the moving waypoint but continues to the next one anyways
+    - the AI controlled Minion kept getting stuck at the waypoint 0 in the second round, so I had to handle the control flow for this waypoint similarily to the moving one: not by checking if the remaining distance was 0, but rather the difference between the remaining and the stopping distance
 
 ## Project Instructions
 
